@@ -90,10 +90,6 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
             }
             // Getting IP of  request
             String IP = ((InetSocketAddress) ctx.channel().remoteAddress()).getHostString();
-            // Cast to IPv4 address
-            if (IP.equals("0:0:0:0:0:0:0:1")) {
-                IP = "127.0.0.1";
-            }
             connection.setIp(IP);
             connection.setDate(new Date());
             // If list of unique requests contains request simply refresh fields, else add request
